@@ -114,5 +114,36 @@ public class Engine {
             line = scan.nextLine();
         }
     }
+
+    public void sortKeywords() {
+        ArrayList<Keyword> sorted = new ArrayList<Keyword>();
+        int[] priorities = new int[keywords.size()];
+        for (int i = 0; i < priorities.length; i++) {
+            priorities[i] = keywords.get(i).getPriority();
+        }
+        Arrays.sort(priorities);
+        for (int i = 0; i < priorities.length; i++) {
+            for (int j = 0; j < keywords.size(); j++) {
+                if (keywords.get(j).getPriority() == priorities[i]) {
+                    sorted.add(keywords.get(j));
+                    keywords.remove(keywords.get(j));
+                    break;
+                }
+            }
+        }
+        keywords = sorted;
+    }
+
+    public void getWelcomeMesssages() {
+        System.out.println(welcomeMessages.get(randomElement(welcomeMessages)));
+    }
+
+    public void getClosingMessages() {
+        System.out.println(closingMessages.get(randomElement(closingMessages)));
+    }
+
+    public int randomElement(ArrayList list) {
+        return (int) (Math.random() * list.size());
+    }
 }
 
