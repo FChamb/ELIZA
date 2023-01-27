@@ -70,5 +70,49 @@ public class Engine {
             line = scan.nextLine();
         }
     }
+
+    private void generateKeywords(Scanner scan) {
+        String keyword = null;
+        int priority = 0;
+        ArrayList<Decomposition> decompositions = new ArrayList<Decomposition>();
+        ArrayList<String> reassembly = new ArrayList<String>();
+        int index = 0;
+        int dIndex = 0;
+        String line = scan.nextLine();
+        while (scan.hasNext()) {
+            if (line.startsWith("reassembly: ")) {
+                String reassemb = line.substring(line.indexOf(":") + 2);
+                reassembly.add(reassemb);
+            }
+            if (line.startsWith("decomposition: ")) {
+                if (!reassembly.isEmpty()) {
+                    decompositions.get(dIndex).setReassembly(reassembly);
+                    reassembly = new ArrayList<String>();
+                    dIndex++;
+                }
+                String decomp = line.substring(line.indexOf(":") + 2);
+                decompositions.add(new Decomposition(decomp));
+            }
+            if (line.startsWith("keyword: ")) {
+                String[] words = line.split(" ");
+                keyword = words[1];
+                priority = Integer.parseInt(words[2]);
+                dIndex = 0;
+            }
+            if (line.startsWith("-")) {
+                if (!reassembly.isEmpty()) {
+                    decompositions.get(dIndex).setReassembly(reassembly);
+                    reassembly = new ArrayList<String>();
+                    dIndex++;
+                }
+                this.keywords.add(new Keyword(keyword));
+                this.keywords.get(index).setPriority(priority);
+                this.keywords.get(index).setDecomposition(decompositions);
+                index++;
+                decompositions = new ArrayList<Decomposition>();
+            }
+            line = scan.nextLine();
+        }
+    }
 }
 
