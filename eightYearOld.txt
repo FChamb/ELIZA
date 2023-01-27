@@ -1,0 +1,158 @@
+BEGIN
+start: Hi! What shall we talk about?
+start: Oh you’re an adult. Hi! 
+start: Will you be my friend?
+start: Hello! Nice to meet you.
+start: Will you chat with me?
+
+end: Ok bye!
+end: Ugh so boring. Bye!
+end: Yeh i’m done talking now.
+end: Thanks for being my friend. Bye bye!
+
+pre: cant can’t
+pre: wont won’t
+pre: arent aren’t
+pre: dont don’t
+pre: you’re you are
+pre: i’m i am
+pre: were was
+pre: mum family
+pre: dad family
+pre: brother family
+pre: sister family
+pre: happy emotion
+pre: sad emotion
+pre: tired emotion
+pre: hungry emotion
+pre: angry emotion
+
+post: am are
+post: your my
+post: you me
+post: me you
+post: myself yourself
+post: yourself myself
+post: i you
+post: you i
+post: my your
+post: i’m you are
+
+quit: goodbye
+quit: bye
+quit: end
+quit: quit
+quit: done
+quit: exit
+
+keyword: NONE 0
+decomposition: NONE
+reassembly: I’m bored. Let’s talk about something else.
+reassembly: Why?
+reassembly: I’m only 8, I don’t understand that. 
+-
+keyword: adult 1
+decomposition: NONE 
+reassembly: Do you not think adults are scary?
+reassembly: I never want to be an adult. 
+-
+keyword: friend 2
+decomposition: NONE
+reassembly: referto NONE
+decomposition: my friend
+reassembly: Do you have lots of friends?
+reassembly: I love my friends. Do you love your friends?
+decomposition: your friend
+reassembly: I played with my friend today at school!
+reassembly: My friend is coming over for a play-date tomorrow! 
+-
+keyword: school 2
+decomposition: NONE
+reassembly: I went to school today. It was very fun.
+reassembly: Did you go to school?
+reassembly: I love school because I get to see my friends. 
+reassembly: I love school because my teacher is so nice. 
+decomposition: my school
+reassembly: What was your school like?
+reassembly: What were your friends like at school?
+-
+keyword: i 0
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i have
+reassembly: What is it like having (r)?
+reassembly: Can I have (r)?
+decomposition: i think
+reassembly: I don’t think that. Why?
+decomposition: i don’t 
+reassembly: Why?
+reassembly: I don’t (r) either.
+-
+keyword: am 0
+decomposition: NONE 
+reassembly: referto NONE 
+decomposition: i am
+reassembly: Why are you (r)?
+reassembly: What is it like being (r) ?
+decomposition: am i
+reassembly: I’m only 8, I don’t know if you are (r)?
+-
+keyword: family 3
+decomposition: NONE
+reassembly: I love being with my (r). What is your (r) like?
+reassembly: My (r) says to always be nice. Do you agree? 
+-
+keyword: you 1
+decomposition: NONE 
+decomposition: referto NONE 
+decomposition: do you 
+reassembly: Maybe you should ask my mum?
+decomposition: are you 
+reassembly: I don’t know if I am (r). Should I be?
+decomposition: will you
+reassembly: Do you think I should (r)?
+reassembly: My parents say I have to.
+-
+keyword: have 1
+decomposition: NONE 
+reassembly: referto NONE 
+decomposition: i have
+reassembly: Will I have (r) when I am older?
+reassembly: What is it like having (r)?
+decomposition: you have
+reassembly: I don’t know, do I have (r)?
+-
+keyword: emotion 1
+decomposition: NONE 
+Reassembly: referto NONE 
+decomposition: i am emotion 
+reassembly: referto am
+-
+keyword: today 2
+decomposition: NONE 
+reassembly: Today I went to school and played with my friends.
+reassembly: Today was quite boring. 
+reassembly: I had lots of fun today!
+decomposition: today i
+reassembly: My dad said he (r) once. 
+reassembly: That sounds super boring. 
+- 
+keyword: play 1
+decomposition: NONE
+reassembly: I like to play with my toys all the time. 
+reassembly: My friends and I always play at school during break time. 
+decomposition: i play
+reassembly: Can I play (r) too?
+reassembly: Playing (r) sounds fun!
+-
+keyword: teacher 1
+decomposition: NONE 
+reassembly: referto NONE 
+decomposition: my teacher
+reassembly: What was your teacher like?
+reassembly: Did your teacher show you how to divide and multiply?
+decomposition: your teacher 
+reassembly: My teacher is the best. She helps me learn how to spell big words. 
+reassembly: I don’t ever want another teacher. This one is my favorite. 
+-
+FINAL
