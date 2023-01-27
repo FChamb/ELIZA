@@ -1,0 +1,132 @@
+BEGIN
+start: Hello! How are you doing?
+start: What might your problem be?
+start: Is there anything I can help you with?
+start: Has anything been bothering you lately?
+start: Hi! I am here to listen. How can I help you?
+start: Is something troubling you?
+
+end: Goodbye! I enjoyed our conversation.
+end: Thanks for talking. Come again any time!
+end: I hope this session was useful.
+end: If you ever need anything else, stop by!
+end: I think we made some great progress today. Have a good one!
+
+quit: goodbye
+quit: bye
+quit: end
+quit: quit
+quit: done
+quit: exit
+
+pre: cant can’t
+pre: wont won’t
+pre: arent aren’t
+pre: dont don’t
+pre: you’re you are
+pre: i’m i am
+pre: were was
+pre: mum family
+pre: dad family
+pre: brother family
+pre: sister family
+pre: happy emotion
+pre: sad emotion
+pre: tired emotion
+pre: hungry emotion
+pre: angry emotion
+
+post: am are
+post: your my
+post: you me
+post: me you
+post: myself yourself
+post: yourself myself
+post: i you
+post: you i
+post: my your
+post: i’m you are
+
+keyword: NONE 0
+decomposition: NONE
+reassembly: I’m sorry, I do not understand.
+reassembly: Can you tell me more about that?
+reassembly: Please continue.
+-
+keyword: sorry 2
+decomposition: NONE
+reassembly: You do not need to apologize.
+reassembly: There is nothing to be sorry about.
+reassembly: Don’t apologize. Please continue.
+-
+keyword: family 2
+decomposition: NONE
+reassembly: Tell me more about your (r).
+reassembly: How is your relationship with your (r)?
+-
+keyword: want 1
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i want
+reassembly: Why do you want (r)?
+decomposition: they want
+reassembly: Why do you think they want (r)?
+-
+keyword: need 1
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i need
+reassembly: Why do you need (r)?
+decomposition: they need
+reassembly: Why do you think they need (r)?
+-
+keyword: why 2
+decomposition: NONE
+reassembly: Why do you think (r)?
+-
+keyword: i 1
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i feel
+reassembly: Why do you feel (r)?
+reassembly: How often do you feel (r)?
+reassembly: What is making you feel this way?
+decomposition: i think
+reassembly: Why do you think (r)?
+reassembly: Can you elaborate more?
+decomposition: i don’t
+reassembly: Why don’t you (r)?
+reassembly: Do you want to be able to (r)?
+-
+keyword: have 1
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i have
+reassembly: Does having (r) worry you?
+reassembly: How does having (r) make you feel?
+decomposition: you have
+reassembly: Would it help if I had (r)?
+reassembly:
+-
+keyword: am 1
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i am
+reassembly: What is making you (r)?
+reassembly: Can you think of the cause of you being (r)?
+decomposition: am i
+reassembly: What is making you question if you are (r)?
+-
+keyword: emotion 1
+decomposition: NONE
+reassembly: referto NONE
+decomposition: i am emotion
+reassembly: referto i am
+-
+keyword: no 2
+decomposition: NONE
+reassembly: Are you saying no to be negative?
+decomposition: there are no
+reassembly: How does it make you feel when there are no (r)?
+-
+FINAL
