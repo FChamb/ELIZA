@@ -1,4 +1,5 @@
 import java.io.FileNotFoundException;
+import java.sql.SQLSyntaxErrorException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -27,7 +28,9 @@ public class RunEngine {
             System.out.print(user);
             String line = scan.nextLine().toLowerCase();
             String[] words = line.split(" ");
-            engine.checkQuitMessages(line);
+            if (!engine.checkQuitMessages(words)) {
+                break;
+            }
             System.out.print(eliza);
             System.out.println(engine.generateResponse(line, words));
         }

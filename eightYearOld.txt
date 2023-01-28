@@ -10,6 +10,13 @@ end: Ugh so boring. Bye!
 end: Yeh i’m done talking now.
 end: Thanks for being my friend. Bye bye!
 
+quit: goodbye
+quit: bye
+quit: end
+quit: quit
+quit: done
+quit: exit
+
 pre: cant can’t
 pre: wont won’t
 pre: arent aren’t
@@ -37,13 +44,6 @@ post: i you
 post: you i
 post: my your
 post: i’m you are
-
-quit: goodbye
-quit: bye
-quit: end
-quit: quit
-quit: done
-quit: exit
 
 keyword: NONE 0
 decomposition: NONE
@@ -104,7 +104,7 @@ reassembly: My (r) says to always be nice. Do you agree?
 -
 keyword: you 1
 decomposition: NONE 
-decomposition: referto NONE 
+reassembly: referto NONE
 decomposition: do you 
 reassembly: Maybe you should ask my mum?
 decomposition: are you 

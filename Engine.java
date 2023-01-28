@@ -57,7 +57,11 @@ public class Engine {
         String line = scan.nextLine();
         while (line.contains("pre")) {
             String[] words = line.split(" ");
-            this.preSubs.add(new Substitution(words[1], words[2]));
+            if (words.length > 3) {
+                this.preSubs.add(new Substitution(words[1], words[2] + " " + words[3]));
+            } else {
+                this.preSubs.add(new Substitution(words[1], words[2]));
+            }
             line = scan.nextLine();
         }
     }
@@ -142,15 +146,16 @@ public class Engine {
         System.out.println(closingMessages.get(randomElement(closingMessages)));
     }
 
-
-    public boolean checkQuitMessages(String line) {
+    public boolean checkQuitMessages(String[] words) {
         for (int i = 0; i < quit.size(); i++) {
-            if (line.contains(quit.get(i))) {
-                this.programAlive = false;
-                return true;
+            for (String word : words) {
+                if (word.equals(quit.get(i))) {
+                    this.programAlive = false;
+                    return false;
+                }
             }
         }
-        return false;
+        return true;
     }
 
     public String generateResponse(String line, String[] words) {
@@ -269,7 +274,6 @@ public class Engine {
         for (String word : words) {
             finalLine += (word + " ");
         }
-        System.out.println(finalLine);
         return finalLine;
     }
 
@@ -280,5 +284,5 @@ public class Engine {
     public int randomElement(ArrayList list) {
         return (int) (Math.random() * list.size());
     }
-}
 
+}
