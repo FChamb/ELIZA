@@ -85,14 +85,14 @@ keyword: why 2
 decomposition: NONE 
 reassembly: Why do you think (r)?
 -
-keyword: i 0
+keyword: i 1
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i feel
 reassembly: Why do you feel (r)?
 reassembly: How often do you feel (r)?
 reassembly: What is making you feel this way?
-decomposition: i think 2
+decomposition: i think
 reassembly: Why do you think (r)?
 reassembly: Can you elaborate more?
 decomposition: i don’t 
@@ -109,7 +109,7 @@ decomposition: you have
 reassembly: Would it help if I had (r)?
 reassembly: How would me having (r) affect you? 
 -
-keyword: am 0
+keyword: am 1
 decomposition: NONE 
 reassembly: referto NONE 
 decomposition: i am

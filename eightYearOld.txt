@@ -76,7 +76,7 @@ decomposition: my school
 reassembly: What was your school like?
 reassembly: What were your friends like at school?
 -
-keyword: i 0
+keyword: i 1
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i have
@@ -88,7 +88,7 @@ decomposition: i don’t
 reassembly: Why?
 reassembly: I don’t (r) either.
 -
-keyword: am 0
+keyword: am 1
 decomposition: NONE 
 reassembly: referto NONE 
 decomposition: i am

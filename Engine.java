@@ -146,7 +146,8 @@ public class Engine {
         System.out.println(closingMessages.get(randomElement(closingMessages)));
     }
 
-    public boolean checkQuitMessages(String[] words) {
+    public boolean checkQuitMessages(String line) {
+        String[] words = line.split(" ");
         for (int i = 0; i < quit.size(); i++) {
             for (String word : words) {
                 if (word.equals(quit.get(i))) {
@@ -158,14 +159,16 @@ public class Engine {
         return true;
     }
 
-    public String generateResponse(String line, String[] words) {
+    public String generateResponse(String line) {
         ArrayList<Keyword> possibleKeyword = new ArrayList<Keyword>();
         ArrayList<String> responses = new ArrayList<String>();
         String[] responseWords;
         String takenFromLine = "";
         String response = "";
-        String preSubLine = correctPreSubs(words);
-        for (String word : words) {
+        String[] oldWords = line.split(" ");
+        String preSubLine = correctPreSubs(line);
+        String[] newWords = preSubLine.split(" ");
+        for (String word : newWords) {
             ArrayList<Keyword> key = isWordKeyword(word);
             if (key.size() != 0) {
                 possibleKeyword.addAll(key);
@@ -177,13 +180,10 @@ public class Engine {
         response = responses.get(randomElement(responses));
         responseWords = response.split(" ");
         for (String word : responseWords) {
-            word = word.replaceAll("[.,?!]", "");
             if (word.contains("(r)")) {
-                int index = line.indexOf(highest.getWord());
-                //System.out.println(index);
-                //System.out.println(line);
-                //System.out.println(response);
-                takenFromLine = line.substring(index);
+                int index = preSubLine.indexOf(highest.getWord());
+                int difference = correctIndexError(oldWords, newWords, highest);
+                takenFromLine = line.substring(index - difference);
                 takenFromLine = correctPostSubs(takenFromLine);
                 response = response.replace("(r)", takenFromLine);
                 return response;
@@ -238,23 +238,20 @@ public class Engine {
         return highestKey;
     }
 
-    public String correctPreSubs(String[] words) {
-        String[] newWords = new String[words.length];
-        for (int i = 0; i < newWords.length; i++) {
-            newWords[i] = words[i];
-        }
+    public String correctPreSubs(String line) {
+        String[] words = line.split(" ");
         String finalLine = "";
         for (int i = 0; i < words.length; i++) {
             for (Substitution sub : preSubs) {
-                if (words[i].contains(sub.getBefore())) {
-                    newWords[i] = sub.getAfter();
+                if (words[i].equals(sub.getBefore())) {
+                    words[i] = sub.getAfter();
                     break;
                 } else {
-                    newWords[i] = words[i];
+                    words[i] = words[i];
                 }
             }
         }
-        for (String word : newWords) {
+        for (String word : words) {
             finalLine += (word + " ");
         }
         return finalLine;
@@ -265,16 +262,29 @@ public class Engine {
         String finalLine = "";
         for (int i = 0; i < words.length; i++) {
             for (Substitution sub : postSubs) {
-                if (words[i].contains(sub.getBefore())) {
+                if (words[i].equals(sub.getBefore())) {
                     words[i] = sub.getAfter();
                     break;
                 }
             }
         }
-        for (String word : words) {
-            finalLine += (word + " ");
+        for (int i = 0; i < words.length - 1; i++) {
+            finalLine += (words[i] + " ");
         }
+        finalLine += words[words.length - 1];
         return finalLine;
+    }
+
+    public int correctIndexError(String[] oldWords, String[] newWords, Keyword highest) {
+        int difference = 0;
+        for (int i = 0; i < newWords.length; i++) {
+            if (!oldWords[i].equals(newWords[i])) {
+                if (!newWords[i].equals(highest.getWord())) {
+                    difference += newWords[i].length() - oldWords[i].length();
+                }
+            }
+        }
+        return difference;
     }
 
     public boolean getProgramALive() {

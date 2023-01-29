@@ -27,12 +27,12 @@ public class RunEngine {
         while (engine.getProgramALive()) {
             System.out.print(user);
             String line = scan.nextLine().toLowerCase();
-            String[] words = line.split(" ");
-            if (!engine.checkQuitMessages(words)) {
+            line = line.replaceAll("[.,?!]", "");
+            if (!engine.checkQuitMessages(line)) {
                 break;
             }
             System.out.print(eliza);
-            System.out.println(engine.generateResponse(line, words));
+            System.out.println(engine.generateResponse(line));
         }
         System.out.print(eliza);
         engine.getClosingMessages();
