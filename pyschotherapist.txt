@@ -98,16 +98,20 @@ reassembly: Can you elaborate more?
 decomposition: i don’t <
 reassembly: Why don’t you (r)?
 reassembly: Do you want to be able to (r)?
+decomposition: i love <
+reassembly: Why do you love (r)?
+reassembly: Is this love or obsession?
+reassembly: How does this love of (r) affect you?
 -
 keyword: have 2
-decomposition: NONE 
-reassembly: referto NONE 
+decomposition: NONE
+reassembly: referto NONE
 decomposition: i have <
 reassembly: Does having (r) worry you?
 reassembly: How does having (r) make you feel?
 decomposition: you have <
 reassembly: Would it help if I had (r)?
-reassembly: How would me having (r) affect you? 
+reassembly: How would me having (r) affect you?
 -
 keyword: am 3
 decomposition: i am
@@ -119,15 +123,15 @@ reassembly: What is making you question if you are (r)?
 keyword: emotion 3
 decomposition: NONE
 reassembly: referto NONE
-decomposition: i am emotion 
+decomposition: i am emotion
 reassembly: referto am
-decomposition: i feel emotion 
-reassembly: referto feel 
+decomposition: i feel emotion
+reassembly: referto feel
 -
 keyword: no 3
-decomposition: NONE 
+decomposition: NONE
 reassembly: Are you saying no to be negative?
-reassembly: Let’s try and move away from using the word no. 
+reassembly: Let’s try and move away from using the word no.
 reassembly: Can you think about this in a more positive light?
 decomposition: there are no <
 reassembly: How does it make you feel when there are no (r)?
@@ -141,10 +145,18 @@ keyword: feel 2
 decomposition: i feel <
 reassembly: Is there a main cause behind these feelings?
 reassembly: Is this something that you feel on a regular basis?
-reassembly: Does feeling (r) affect how you go about your life? 
+reassembly: Does feeling (r) affect how you go about your life?
 decomposition: they feel <
 reassembly: Could there be something you are doing that is making them feel (r)?
 reassembly: How does their feeling (r) make you feel?
+decomposition: he feels <
+reassembly: Is there a main cause behind these feelings?
+reassembly: Do you think this is something he feels on a regular basis?
+reassembly: Does feeling (r) affect how he goes about his life?
+decomposition: she feels <
+reassembly: Is there a main cause behind these feelings?
+reassembly: Do you think this is something she feels on a regular basis?
+reassembly: Does feeling (r) affect how she goes about her life?
 -
 keyword: hate 4
 decomposition: i hate <
