@@ -54,18 +54,18 @@ reassembly: I’m sorry, I do not understand.
 reassembly: Can you tell me more about that?
 reassembly: Please continue.
 -
-keyword: sorry 2
+keyword: sorry 4
 decomposition: NONE
 reassembly: You do not need to apologize.
 reassembly: There is nothing to be sorry about.
 reassembly: Don’t apologize. Please continue.
 -
-keyword: family 2
+keyword: family 4
 decomposition: NONE
 reassembly: Tell me more about your (r).
 reassembly: How is your relationship with your (r)?
 -
-keyword: want 1
+keyword: want 2
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i want 
@@ -73,7 +73,7 @@ reassembly: Why do you want (r)?
 decomposition: they want 
 reassembly: Why do you think they want (r)?
 -
-keyword: need 1
+keyword: need 2
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i need 
@@ -81,7 +81,7 @@ reassembly: Why do you need (r)?
 decomposition: they need
 reassembly: Why do you think they need (r)?
 -
-keyword: why 2
+keyword: why 1
 decomposition: NONE 
 reassembly: Why do you think (r)?
 -
@@ -99,7 +99,7 @@ decomposition: i don’t
 reassembly: Why don’t you (r)?
 reassembly: Do you want to be able to (r)?
 -
-keyword: have 1
+keyword: have 2
 decomposition: NONE 
 reassembly: referto NONE 
 decomposition: i have
@@ -109,14 +109,14 @@ decomposition: you have
 reassembly: Would it help if I had (r)?
 reassembly: How would me having (r) affect you? 
 -
-keyword: am 1
+keyword: am 3
 decomposition: i am
 reassembly: What is making you (r)?
 reassembly: Can you think of the cause of you being (r)?
 decomposition: am i
 reassembly: What is making you question if you are (r)?
 -
-keyword: emotion 1
+keyword: emotion 3
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i am emotion 
@@ -124,13 +124,15 @@ reassembly: referto am
 decomposition: i feel emotion 
 reassembly: referto feel 
 -
-keyword: no 2
+keyword: no 3
 decomposition: NONE 
 reassembly: Are you saying no to be negative?
 reassembly: Let’s try and move away from using the word no. 
 reassembly: Can you think about this in a more positive light?
 decomposition: there are no
 reassembly: How does it make you feel when there are no (r)?
+decomposition: there is no
+reassembly: Why do you think there is no (r)?
 decomposition: i have no 
 reassembly: Does having no (r) affect you mentally?
 reassembly: Would life be easier if you had (r)?

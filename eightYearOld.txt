@@ -51,12 +51,12 @@ reassembly: I’m bored. Let’s talk about something else.
 reassembly: Why?
 reassembly: I’m only 8, I don’t understand that.
 -
-keyword: adult 1
+keyword: adult 2
 decomposition: NONE 
 reassembly: Do you not think adults are scary?
 reassembly: I never want to be an adult.
 -
-keyword: friend 2
+keyword: friend 4
 decomposition: NONE
 reassembly: referto NONE
 decomposition: my friend
@@ -66,7 +66,7 @@ decomposition: your friend
 reassembly: I played with my friend today at school!
 reassembly: My friend is coming over for a play-date tomorrow!
 -
-keyword: school 2
+keyword: school 3
 decomposition: NONE
 reassembly: I went to school today. It was very fun.
 reassembly: Did you go to school?
@@ -88,16 +88,14 @@ decomposition: i don’t
 reassembly: Why?
 reassembly: I don’t (r) either.
 -
-keyword: am 1
-decomposition: NONE 
-reassembly: referto NONE 
+keyword: am 3
 decomposition: i am
 reassembly: Why are you (r)?
 reassembly: What is it like being (r) ?
 decomposition: am i
 reassembly: I’m only 8, I don’t know if you are (r)?
 -
-keyword: family 3
+keyword: family 4
 decomposition: NONE
 reassembly: I love being with my (r). What is your (r) like?
 reassembly: My (r) says to always be nice. Do you agree? 
@@ -113,7 +111,7 @@ decomposition: will you
 reassembly: Do you think I should (r)?
 reassembly: My parents say I have to.
 -
-keyword: have 1
+keyword: have 2
 decomposition: NONE 
 reassembly: referto NONE 
 decomposition: i have
@@ -137,7 +135,7 @@ decomposition: today i
 reassembly: My dad said he (r) once. 
 reassembly: That sounds super boring. 
 - 
-keyword: play 1
+keyword: play 4
 decomposition: NONE
 reassembly: I like to play with my toys all the time. 
 reassembly: My friends and I always play at school during break time. 
@@ -145,7 +143,7 @@ decomposition: i play
 reassembly: Can I play (r) too?
 reassembly: Playing (r) sounds fun!
 -
-keyword: teacher 1
+keyword: teacher 4
 decomposition: NONE 
 reassembly: referto NONE 
 decomposition: my teacher
