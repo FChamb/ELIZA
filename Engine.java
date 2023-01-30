@@ -167,6 +167,7 @@ public class Engine {
         String[] responseWords;
         String takenFromLine = "";
         String response = "";
+        int index = 0;
         String[] oldWords = line.split(" ");
         String preSubLine = correctPreSubs(line);
         String[] newWords = preSubLine.split(" ");
@@ -183,17 +184,25 @@ public class Engine {
         responseWords = response.split(" ");
         for (String word : responseWords) {
             if (word.contains("(r)")) {
-                int index = preSubLine.indexOf(highest.getWord());
-                int difference = correctIndexError(oldWords, newWords, highest);
-                takenFromLine = line.substring(index - difference);
-                takenFromLine = correctPostSubs(takenFromLine);
-                response = response.replace("(r)", takenFromLine);
+                if (highest.getDecomposition().toString().contains("<")) {
+                    index = preSubLine.indexOf(highest.getWord());
+                    int difference = correctIndexError(oldWords, newWords, highest);
+                    takenFromLine = line.substring((index + highest.getWord().length()+1) - difference);
+                    takenFromLine = correctPostSubs(takenFromLine);
+                    response = response.replace("(r)", takenFromLine);
+                } else {
+                    index = preSubLine.indexOf(highest.getWord());
+                    int difference = correctIndexError(oldWords, newWords, highest);
+                    takenFromLine = line.substring(index - difference);
+                    takenFromLine = correctPostSubs(takenFromLine);
+                    response = response.replace("(r)", takenFromLine);
+                }
                 return response;
             }
         }
         if (!highest.getWord().equals("NONE")) {
             memories.add(response);
-            System.out.println(memories);
+        //    System.out.println(memories);
         }
         return response;
     }
@@ -210,7 +219,7 @@ public class Engine {
 
     public ArrayList<String> checkDecomposition(String line, Keyword keyword) {
         for (Decomposition decomp : keyword.getDecomposition()) {
-            if (line.contains(decomp.getDecomposition())) {
+            if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
                 return decomp.getReassembly();
             }
         }
