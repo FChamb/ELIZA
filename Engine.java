@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.lang.constant.DynamicCallSiteDesc;
 import java.security.Key;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -12,7 +13,7 @@ public class Engine {
     private final ArrayList<Substitution> preSubs = new ArrayList<Substitution>();
     private final ArrayList<Substitution> postSubs = new ArrayList<Substitution>();
     private ArrayList<Keyword> keywords = new ArrayList<Keyword>();
-    private ArrayList<String> memories = new ArrayList<>();
+    private ArrayList<ArrayList<String>> memories = new ArrayList<ArrayList<String>>();
     private boolean programAlive = true;
 
     public void run(String file) throws FileNotFoundException {
@@ -187,22 +188,19 @@ public class Engine {
                 if (highest.getDecomposition().toString().contains("<")) {
                     index = preSubLine.indexOf(highest.getWord());
                     int difference = correctIndexError(oldWords, newWords, highest);
-                    takenFromLine = line.substring((index + highest.getWord().length()+1) - difference);
+                    takenFromLine = line.substring((index + highest.getWord().length() + 1) - difference);
                     takenFromLine = correctPostSubs(takenFromLine);
                     response = response.replace("(r)", takenFromLine);
+                    createMemory(highest, takenFromLine);
                 } else {
                     index = preSubLine.indexOf(highest.getWord());
                     int difference = correctIndexError(oldWords, newWords, highest);
                     takenFromLine = line.substring(index - difference);
                     takenFromLine = correctPostSubs(takenFromLine);
                     response = response.replace("(r)", takenFromLine);
+                    createMemory(highest, takenFromLine);
                 }
-                return response;
             }
-        }
-        if (!highest.getWord().equals("NONE")) {
-            memories.add(response);
-        //    System.out.println(memories);
         }
         return response;
     }
@@ -218,8 +216,12 @@ public class Engine {
     }
 
     public ArrayList<String> checkDecomposition(String line, Keyword keyword) {
+        int random = (int) (Math.random() * 10);
         for (Decomposition decomp : keyword.getDecomposition()) {
             if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
+                if (!memories.isEmpty() && random <= 5) {
+                    return memories.get(randomElement(memories));
+                }
                 return decomp.getReassembly();
             }
         }
@@ -300,6 +302,16 @@ public class Engine {
             }
         }
         return difference;
+    }
+
+    public void createMemory(Keyword keyword, String takenFromLine) {
+        ArrayList<String> memoryResponses = new ArrayList<String>();
+        memoryResponses.add("Earlier you mentioned " + takenFromLine);
+        memoryResponses.add("Why don't we spend more time discussing " + takenFromLine);
+        memoryResponses.add("Can you elaborate more on " + takenFromLine);
+        if (!keyword.getWord().equals("NONE")) {
+            memories.add(memoryResponses);
+        }
     }
 
     public boolean getProgramALive() {
