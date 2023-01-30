@@ -68,44 +68,44 @@ reassembly: How is your relationship with your (r)?
 keyword: want 2
 decomposition: NONE
 reassembly: referto NONE
-decomposition: i want 
+decomposition: i want <
 reassembly: Why do you want (r)?
-decomposition: they want 
+decomposition: they want <
 reassembly: Why do you think they want (r)?
 -
 keyword: need 2
 decomposition: NONE
 reassembly: referto NONE
-decomposition: i need 
+decomposition: i need <
 reassembly: Why do you need (r)?
-decomposition: they need
+decomposition: they need <
 reassembly: Why do you think they need (r)?
 -
 keyword: why 1
-decomposition: NONE 
+decomposition: NONE <
 reassembly: Why do you think (r)?
 -
 keyword: i 1
 decomposition: NONE
 reassembly: referto NONE
-decomposition: i feel
+decomposition: i feel <
 reassembly: Why do you feel (r)?
 reassembly: How often do you feel (r)?
 reassembly: What is making you feel this way?
-decomposition: i think
+decomposition: i think <
 reassembly: Why do you think (r)?
 reassembly: Can you elaborate more?
-decomposition: i don’t 
+decomposition: i don’t <
 reassembly: Why don’t you (r)?
 reassembly: Do you want to be able to (r)?
 -
 keyword: have 2
 decomposition: NONE 
 reassembly: referto NONE 
-decomposition: i have
+decomposition: i have <
 reassembly: Does having (r) worry you?
 reassembly: How does having (r) make you feel?
-decomposition: you have
+decomposition: you have <
 reassembly: Would it help if I had (r)?
 reassembly: How would me having (r) affect you? 
 -
@@ -129,25 +129,25 @@ decomposition: NONE
 reassembly: Are you saying no to be negative?
 reassembly: Let’s try and move away from using the word no. 
 reassembly: Can you think about this in a more positive light?
-decomposition: there are no
+decomposition: there are no <
 reassembly: How does it make you feel when there are no (r)?
-decomposition: there is no
+decomposition: there is no <
 reassembly: Why do you think there is no (r)?
-decomposition: i have no 
+decomposition: i have no <
 reassembly: Does having no (r) affect you mentally?
 reassembly: Would life be easier if you had (r)?
 -
 keyword: feel 2
-decomposition: i feel 
+decomposition: i feel <
 reassembly: Is there a main cause behind these feelings?
 reassembly: Is this something that you feel on a regular basis?
 reassembly: Does feeling (r) affect how you go about your life? 
-decomposition: they feel 
+decomposition: they feel <
 reassembly: Could there be something you are doing that is making them feel (r)?
 reassembly: How does their feeling (r) make you feel?
 -
 keyword: hate 4
-decomposition: i hate
+decomposition: i hate <
 reassembly: It is common to hate (r).
 reassembly: Why do you think you hate (r)?
 -
