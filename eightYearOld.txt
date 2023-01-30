@@ -49,12 +49,12 @@ keyword: NONE 0
 decomposition: NONE
 reassembly: I’m bored. Let’s talk about something else.
 reassembly: Why?
-reassembly: I’m only 8, I don’t understand that. 
+reassembly: I’m only 8, I don’t understand that.
 -
 keyword: adult 1
 decomposition: NONE 
 reassembly: Do you not think adults are scary?
-reassembly: I never want to be an adult. 
+reassembly: I never want to be an adult.
 -
 keyword: friend 2
 decomposition: NONE
@@ -64,14 +64,14 @@ reassembly: Do you have lots of friends?
 reassembly: I love my friends. Do you love your friends?
 decomposition: your friend
 reassembly: I played with my friend today at school!
-reassembly: My friend is coming over for a play-date tomorrow! 
+reassembly: My friend is coming over for a play-date tomorrow!
 -
 keyword: school 2
 decomposition: NONE
 reassembly: I went to school today. It was very fun.
 reassembly: Did you go to school?
-reassembly: I love school because I get to see my friends. 
-reassembly: I love school because my teacher is so nice. 
+reassembly: I love school because I get to see my friends.
+reassembly: I love school because my teacher is so nice.
 decomposition: my school
 reassembly: What was your school like?
 reassembly: What were your friends like at school?
@@ -124,7 +124,7 @@ reassembly: I don’t know, do I have (r)?
 -
 keyword: emotion 1
 decomposition: NONE 
-Reassembly: referto NONE 
+reassembly: referto NONE
 decomposition: i am emotion 
 reassembly: referto am
 -

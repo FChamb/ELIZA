@@ -1,5 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class Engine {
     private final ArrayList<Substitution> preSubs = new ArrayList<Substitution>();
     private final ArrayList<Substitution> postSubs = new ArrayList<Substitution>();
     private ArrayList<Keyword> keywords = new ArrayList<Keyword>();
+    private ArrayList<String> memories = new ArrayList<>();
     private boolean programAlive = true;
 
     public void run(String file) throws FileNotFoundException {
@@ -189,6 +191,10 @@ public class Engine {
                 return response;
             }
         }
+        if (!highest.getWord().equals("NONE")) {
+            memories.add(response);
+            System.out.println(memories);
+        }
         return response;
     }
 
@@ -294,5 +300,4 @@ public class Engine {
     public int randomElement(ArrayList list) {
         return (int) (Math.random() * list.size());
     }
-
 }

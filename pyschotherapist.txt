@@ -110,8 +110,6 @@ reassembly: Would it help if I had (r)?
 reassembly: How would me having (r) affect you? 
 -
 keyword: am 1
-decomposition: NONE 
-reassembly: referto NONE 
 decomposition: i am
 reassembly: What is making you (r)?
 reassembly: Can you think of the cause of you being (r)?
@@ -145,5 +143,10 @@ reassembly: Does feeling (r) affect how you go about your life?
 decomposition: they feel 
 reassembly: Could there be something you are doing that is making them feel (r)?
 reassembly: How does their feeling (r) make you feel?
-- 
+-
+keyword: hate 4
+decomposition: i hate
+reassembly: It is common to hate (r).
+reassembly: Why do you think you hate (r)?
+-
 FINAL
