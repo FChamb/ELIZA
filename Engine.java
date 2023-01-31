@@ -265,6 +265,10 @@ public class Engine {
                     memories.remove(memory);
                     return memory;
                 }
+                
+                if (!memories.isEmpty() && random <= 4) {
+                    return memories.get(randomElement(memories));
+                }
                 return decomp.getReassembly();
             }
         }

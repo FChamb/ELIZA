@@ -172,9 +172,9 @@ reassembly: referto feel
 decomposition: they feel emotion
 -
 decomposition: he feels emotion 
-reassembly: referto feel 
+reassembly: referto feel
 decomposition: she feels emotion 
-reassembly: referto feel 
+reassembly: referto feel
 decomposition: they feel emotion 
 reassembly: referto feel
 -
