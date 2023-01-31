@@ -166,9 +166,7 @@ public class Engine {
         ArrayList<Keyword> possibleKeyword = new ArrayList<Keyword>();
         ArrayList<String> responses = new ArrayList<String>();
         String[] responseWords;
-        String takenFromLine = "";
         String response = "";
-        int index = 0;
         String[] oldWords = line.split(" ");
         String preSubLine = correctPreSubs(line);
         String[] newWords = preSubLine.split(" ");
@@ -186,18 +184,18 @@ public class Engine {
         for (String word : responseWords) {
             if (word.contains("(r)")) {
                 if (highest.getDecomposition().toString().contains("<")) {
-                    index = preSubLine.indexOf(highest.getWord());
+                    int index = preSubLine.indexOf(highest.getWord());
                     int difference = correctIndexError(oldWords, newWords, highest);
-                    takenFromLine = line.substring((index + highest.getWord().length() + 1) - difference);
+                    String takenFromLine = line.substring((index + highest.getWord().length() + 1) - difference);
                     takenFromLine = correctPostSubs(takenFromLine);
                     response = response.replace("(r)", takenFromLine);
                     if (!highest.getWord().equals("emotion")){
                         createMemory(highest, takenFromLine);
                     }
                 } else {
-                    index = preSubLine.indexOf(highest.getWord());
+                    int index = preSubLine.indexOf(highest.getWord());
                     int difference = correctIndexError(oldWords, newWords, highest);
-                    takenFromLine = line.substring(index - difference);
+                    String takenFromLine = line.substring(index - difference);
                     takenFromLine = correctPostSubs(takenFromLine);
                     response = response.replace("(r)", takenFromLine);
                     if (!highest.getWord().equals("emotion")){
