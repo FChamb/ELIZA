@@ -204,7 +204,7 @@ reassembly: Do you think this dream is connected to your life?
 keyword: love 4
 decomposition: i love <
 reassembly: Why do you love (r)?
-reassembly: Is there a reason you love (r)
+reassembly: Is there a reason you love (r)?
 -
 keyword: mean 4
 decomposition: NONE

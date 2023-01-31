@@ -23,11 +23,9 @@ public class Keyword {
 
     public int getPriority() { return priority; }
 
-    public ArrayList<Decomposition> getDecomposition() { return 
-decomposition; }
+    public ArrayList<Decomposition> getDecomposition() { return decomposition; }
 
     public String toString() {
-        return this.word + " " + this.getPriority() + "\n" + 
-decomposition.toString();
+        return this.word + " " + this.getPriority() + "\n" + decomposition.toString();
     }
 }
