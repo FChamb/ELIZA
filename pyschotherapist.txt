@@ -157,11 +157,11 @@ decomposition: i am emotion
 reassembly: referto am
 decomposition: i feel emotion
 reassembly: referto feel
-decomposition: he feels emotion 
+decomposition: he feels emotion
 reassembly: referto feel
 decomposition: she feels emotion 
 reassembly: referto feel
-decomposition: they feel emotion 
+decomposition: they feel emotion
 reassembly: referto feel
 -
 keyword: no 3
@@ -205,5 +205,15 @@ keyword: love 4
 decomposition: i love <
 reassembly: Why do you love (r)?
 reassembly: Is there a reason you love (r)
+-
+keyword: mean 4
+decomposition: NONE
+reassembly: Why do think people feel the need to be mean?
+reassembly: Do you think being mean can severely affect people?
+-
+keyword: nice 4
+decomposition: NONE
+reassembly: How do you think being nice affects those around you?
+reassembly: Do you think you should be nice to everyone?
 -
 FINAL
