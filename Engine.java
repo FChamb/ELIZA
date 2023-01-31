@@ -191,14 +191,18 @@ public class Engine {
                     takenFromLine = line.substring((index + highest.getWord().length() + 1) - difference);
                     takenFromLine = correctPostSubs(takenFromLine);
                     response = response.replace("(r)", takenFromLine);
-                    createMemory(highest, takenFromLine);
+                    if (!highest.getWord().equals("emotion")){
+                        createMemory(highest, takenFromLine);
+                    }
                 } else {
                     index = preSubLine.indexOf(highest.getWord());
                     int difference = correctIndexError(oldWords, newWords, highest);
                     takenFromLine = line.substring(index - difference);
                     takenFromLine = correctPostSubs(takenFromLine);
                     response = response.replace("(r)", takenFromLine);
-                    createMemory(highest, takenFromLine);
+                    if (!highest.getWord().equals("emotion")){
+                        createMemory(highest, takenFromLine);
+                    }
                 }
             }
         }
@@ -219,7 +223,7 @@ public class Engine {
         int random = (int) (Math.random() * 10);
         for (Decomposition decomp : keyword.getDecomposition()) {
             if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
-                if (!memories.isEmpty() && random <= 5) {
+                if (!memories.isEmpty() && random <= 4) {
                     return memories.get(randomElement(memories));
                 }
                 return decomp.getReassembly();
@@ -295,11 +299,15 @@ public class Engine {
     public int correctIndexError(String[] oldWords, String[] newWords, Keyword highest) {
         int difference = 0;
         for (int i = 0; i < newWords.length; i++) {
+            if (newWords[i].equals(highest.getWord())) {
+                break;
+            }
             if (!oldWords[i].equals(newWords[i])) {
                 if (!newWords[i].equals(highest.getWord())) {
                     difference += newWords[i].length() - oldWords[i].length();
-                }
+                } 
             }
+        
         }
         return difference;
     }
