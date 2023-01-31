@@ -36,6 +36,7 @@ pre: tired emotion
 pre: hungry emotion
 pre: angry emotion
 pre: hurt emotion
+pre: bored emotion
 
 post: am are
 post: your my
@@ -59,6 +60,10 @@ decomposition: NONE
 reassembly: You do not need to apologize.
 reassembly: There is nothing to be sorry about.
 reassembly: Don’t apologize. Please continue.
+-
+keyword: apologise 4
+decomposition: NONE
+reassembly: referto sorry
 -
 keyword: family 4
 decomposition: NONE
@@ -84,6 +89,13 @@ reassembly: Why do you think they need (r)?
 keyword: why 1
 decomposition: NONE <
 reassembly: Why do you think (r)?
+decomposition: why can't i <
+reassembly: Do you believe you should be able to (r)?
+reassembly: Would you like to be able to (r)?
+reassembly: Why do you think you cant (r)?
+decomposition: why don't you <
+reassembly: Why do you think I don't (r)?
+reassembly: Do you want me to (r)?
 -
 keyword: i 1
 decomposition: NONE
@@ -133,6 +145,7 @@ decomposition: NONE
 reassembly: Are you saying no to be negative?
 reassembly: Let’s try and move away from using the word no.
 reassembly: Can you think about this in a more positive light?
+reassembly: Why no?
 decomposition: there are no <
 reassembly: How does it make you feel when there are no (r)?
 decomposition: there is no <
@@ -140,6 +153,12 @@ reassembly: Why do you think there is no (r)?
 decomposition: i have no <
 reassembly: Does having no (r) affect you mentally?
 reassembly: Would life be easier if you had (r)?
+-
+keyword: yes 3
+decomposition: NONE
+reassembly: You seem to be serious.
+reassembly: Are you sure?
+reassembly: I see.
 -
 keyword: feel 2
 decomposition: i feel <
@@ -162,5 +181,22 @@ keyword: hate 4
 decomposition: i hate <
 reassembly: It is common to hate (r).
 reassembly: Why do you think you hate (r)?
+-
+keyword: remember 5
+decomposition: i remember <
+reassembly: Do you often thing of (r)?
+reassembly: Does thinking about (r) remind you of anything else?
+reassembly: Why do you remember (r) just now?
+-
+keyword: dream 4
+decomposition: NONE
+reassembly: What does that dream make you think?
+reassembly: Do you remember most of your dreams?
+reassembly: Do you think this dream is connected to your life?
+-
+keyword: love 4
+decomposition: i love <
+reassembly: Why do you love (r)?
+reassembly: Is there a reason you love (r)/
 -
 FINAL

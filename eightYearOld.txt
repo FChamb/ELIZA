@@ -33,6 +33,7 @@ pre: sad emotion
 pre: tired emotion
 pre: hungry emotion
 pre: angry emotion
+pre: toys toy
 
 post: am are
 post: your my
@@ -152,5 +153,28 @@ reassembly: Did your teacher show you how to divide and multiply?
 decomposition: your teacher 
 reassembly: My teacher is the best. She helps me learn how to spell big words. 
 reassembly: I don’t ever want another teacher. This one is my favorite. 
+-
+keyword: toy 5
+decomposition: NONE
+reassembly: Oh I love toys! My favorite one is a little car that moves on a track.
+reassembly: Do you have any toys?
+decomposition: favorite toy <
+reassembly: My favorite toy is a little car that goes on a track.
+reassembly: What is your favorite toy?
+-
+keyword: no 3
+decomposition: NONE
+reassembly: No no no.
+reassembly: Why no?
+reassembly: I don't agree with you.
+-
+keyword: yes 3
+decomposition: NONE
+reassembly: I don't agree with you.
+reassembly: Hmm
+-
+keyword: name 5
+decomposition: what is your name
+reassembly: My name is Freddie.
 -
 FINAL
