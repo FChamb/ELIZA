@@ -70,10 +70,11 @@ decomposition: NONE
 reassembly: referto sorry
 -
 keyword: family 4
-decomposition: my family
+decomposition: NONE
 reassembly: Tell me more about your (r).
 reassembly: How is your relationship with your (r)?
 decomposition: family is emotion
+decomposition: family is emotion <
 reassembly: How do you feel that your (r)?
 -
 keyword: want 2
@@ -169,6 +170,12 @@ reassembly: referto feel
 decomposition: she feels emotion 
 reassembly: referto feel
 decomposition: they feel emotion
+-
+decomposition: he feels emotion 
+reassembly: referto feel 
+decomposition: she feels emotion 
+reassembly: referto feel 
+decomposition: they feel emotion 
 reassembly: referto feel
 -
 keyword: no 3
