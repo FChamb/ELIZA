@@ -28,6 +28,10 @@ pre: mum family
 pre: dad family
 pre: brother family
 pre: sister family
+pre: wife family
+pre: husband family
+pre: grandma family
+pre: grandpa family
 pre: happy emotion
 pre: sad emotion
 pre: tired emotion

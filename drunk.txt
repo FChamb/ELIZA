@@ -1,49 +1,41 @@
 BEGIN
-start:
-start:
-start:
-start:
-start:
-start:
+start: helol mate, how you doing? i've had a little too mucsh to drink if ya know what i mean
+start: wjat are you looklinf at
+start: if I had to guwss, id say you can'd hold a drrink
+start: wjat do you say, a shot or two woth me
+start: didb't tour parwnts tell you not to stare
 
-end:
-end:
-end:
-end:
-end:
+end: wve should git a drink sometyme
+end: hove a good one matw
+end: ivw had enough of you, get out of my saight
+end: shove it or ill sjove ypuu
 
-quit:
-quit:
-quit:
-quit:
-quit:
-quit:
+quit: goodbye
+quit: bye
+quit: end
+quit: quit
+quit: done
+quit: exit
 
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
-pre:
+pre: cant can’t
+pre: wont won’t
+pre: arent aren’t
+pre: dont don’t
+pre: you’re you are
+pre: i’m i am
+pre: were was
+pre: mum family
+pre: dad family
+pre: brother family
+pre: sister family
 
-post:
-post:
-post:
-post:
-post:
-post:
-post:
-post:
-post:
-post:
+post: am are
+post: your my
+post: you me
+post: me you
+post: myself yourself
+post: yourself myself
+post: i you
+post: you i
+post: my your
+post: i’m you are
