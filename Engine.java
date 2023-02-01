@@ -221,8 +221,10 @@ public class Engine {
         int random = (int) (Math.random() * 10);
         for (Decomposition decomp : keyword.getDecomposition()) {
             if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
-                if (!memories.isEmpty() && random <= 4) {
-                    return memories.get(randomElement(memories));
+                if (!memories.isEmpty() && random <= 5) {
+                    ArrayList<String> memory = memories.get(randomElement(memories));
+                    memories.remove(memory);
+                    return memory;
                 }
                 return decomp.getReassembly();
             }
