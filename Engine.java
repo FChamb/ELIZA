@@ -178,7 +178,7 @@ public class Engine {
         }
         Keyword highest = getHighestPriority(possibleKeyword);
         responses = checkDecomposition(preSubLine, highest);
-        responses.addAll(checkReferenceTo(responses));
+        checkReferenceTo(preSubLine, responses);
         response = responses.get(randomElement(responses));
         responseWords = response.split(" ");
         for (String word : responseWords) {
@@ -232,19 +232,19 @@ public class Engine {
         return keyword.getDecomposition().get(0).getReassembly();
     }
 
-    public ArrayList<String> checkReferenceTo(ArrayList<String> responses) {
-        for (String resp : responses) {
+    public void checkReferenceTo(String line, ArrayList<String> responses) {
+        for (int i = 0; i < responses.size(); i++) {
+            String resp = responses.get(i);
             if (resp.contains("referto")) {
                 String newResp = resp.substring(resp.indexOf(" ") + 1);
                 for (Keyword key : keywords) {
                     if (key.getWord().equals(newResp)) {
                         responses.remove(resp);
-                        responses.add(key.getDecomposition().get(0).getReassembly().get(randomElement(key.getDecomposition().get(0).getReassembly())));
+                        responses.addAll(checkDecomposition(line, key));
                     }
                 }
             }
         }
-        return responses;
     }
 
     public Keyword getHighestPriority(ArrayList<Keyword> keywords) {

@@ -159,6 +159,8 @@ decomposition: NONE
 reassembly: referto NONE
 decomposition: i am emotion
 reassembly: referto am
+decomposition: am i emotion
+reassembly: referto am
 decomposition: i feel emotion
 reassembly: referto feel
 decomposition: he feels emotion
