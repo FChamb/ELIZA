@@ -30,6 +30,10 @@ pre: mum family
 pre: dad family
 pre: brother family
 pre: sister family
+pre: wife family
+pre: husband family
+pre: grandma family
+pre: grandpa family
 pre: happy emotion
 pre: sad emotion
 pre: tired emotion
@@ -129,7 +133,7 @@ reassembly: How would me having (r) affect you?
 keyword: am 3
 decomposition: i am
 reassembly: What is making you (r)?
-reassembly: Can you think of the cause of you being (r)?
+reassembly: Can you think of the cause of why you are (r)?
 decomposition: am i
 reassembly: What is making you question if you are (r)?
 -
@@ -205,6 +209,8 @@ keyword: love 4
 decomposition: i love <
 reassembly: Why do you love (r)?
 reassembly: Is there a reason you love (r)?
+decomposition: doesn't love <
+reassembly: Why do you think that is?
 -
 keyword: mean 4
 decomposition: NONE
@@ -215,5 +221,12 @@ keyword: nice 4
 decomposition: NONE
 reassembly: How do you think being nice affects those around you?
 reassembly: Do you think you should be nice to everyone?
+-
+keyword: cheated 5
+decomposition: i cheated <
+reassembly: What is the cause for you cheating (r)?
+reassembly: How do you feel knowing that you cheated (r)?
+decomposition: family cheated <
+reassembly: Why do you think that they cheated (r)?
 -
 FINAL
