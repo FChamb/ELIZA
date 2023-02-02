@@ -38,6 +38,7 @@ pre: tired emotion
 pre: hungry emotion
 pre: angry emotion
 pre: toys toy
+pre: friends friend
 
 post: am are
 post: your my
@@ -87,6 +88,7 @@ reassembly: referto NONE
 decomposition: i have <
 reassembly: What is it like having (r)?
 reassembly: Can I have (r)?
+reassembly: Will I have (r) when I am older?
 decomposition: i think
 reassembly: I don’t think that. Why?
 decomposition: i don’t <
@@ -144,6 +146,9 @@ keyword: play 4
 decomposition: NONE
 reassembly: I like to play with my toys all the time. 
 reassembly: My friends and I always play at school during break time. 
+decomposition: play with <
+reassembly: I play (r) a lot. 
+reassembly: Sometimes I like playing (r) but then I get bored.
 decomposition: i play <
 reassembly: Can I play (r) too?
 reassembly: Playing (r) sounds fun!
@@ -180,5 +185,13 @@ reassembly: Hmm
 keyword: name 5
 decomposition: what is your name
 reassembly: My name is Freddie.
+-
+keyword: like 2
+decomposition: you like <
+reassembly: If my friends like (r) then I do as well.
+reassembly: Sometimes I like (r) but sometimes I dont.
+decomposition: i like <
+reassembly: Why do you like (r)?
+reassembly: Will I like (r) when I am older?
 -
 FINAL
