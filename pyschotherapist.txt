@@ -70,7 +70,7 @@ decomposition: NONE
 reassembly: referto sorry
 -
 keyword: family 4
-decomposition: NONE
+decomposition: my family
 reassembly: Tell me more about your (r).
 reassembly: How is your relationship with your (r)?
 decomposition: family is emotion
@@ -196,6 +196,7 @@ decomposition: i hate <
 reassembly: It is common to hate (r).
 reassembly: Why do you think you hate (r)?
 -
+<<<<<<< HEAD
 keyword: remember 5
 decomposition: i remember <
 reassembly: Do you often thing of (r)?
@@ -233,3 +234,17 @@ decomposition: family cheated <
 reassembly: Why do you think that they cheated (r)?
 -
 FINAL
+=======
+keyword: kind 4
+decomposition: NONE
+reassembly: How does kindness affect you?
+reassembly: Do you think it is good to be kind?
+reassembly: Do you think people appreciate kindness enough?
+-
+keyword: mean 4
+decomposition: NONE 
+reassembly: Why do you think people feel the need to be mean?
+reassembly: Do you think being mean can severely affect people?
+-
+FINAL
+>>>>>>> f2da506 (Added some new keywords)
