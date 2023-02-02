@@ -233,8 +233,6 @@ reassembly: How do you feel knowing that you cheated (r)?
 decomposition: family cheated <
 reassembly: Why do you think that they cheated (r)?
 -
-FINAL
-=======
 keyword: kind 4
 decomposition: NONE
 reassembly: How does kindness affect you?
@@ -247,4 +245,4 @@ reassembly: Why do you think people feel the need to be mean?
 reassembly: Do you think being mean can severely affect people?
 -
 FINAL
->>>>>>> f2da506 (Added some new keywords)
+
