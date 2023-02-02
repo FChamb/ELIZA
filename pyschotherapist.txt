@@ -27,6 +27,7 @@ pre: you’re you are
 pre: i’m i am
 pre: were was
 pre: mum family
+pre: mom family
 pre: dad family
 pre: brother family
 pre: sister family
