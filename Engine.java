@@ -112,8 +112,7 @@ public class Engine {
                     reassembly = new ArrayList<String>();
                     dIndex++;
                 }
-                this.keywords.add(new Keyword(keyword));
-                this.keywords.get(index).setPriority(priority);
+                this.keywords.add(new Keyword(keyword, priority));
                 this.keywords.get(index).setDecomposition(decompositions);
                 index++;
                 decompositions = new ArrayList<Decomposition>();
