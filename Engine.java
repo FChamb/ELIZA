@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * The engine class. This acts as the groundwork to enable Eliza to properly work. It contains all the required methods
+ * to read a script, create a reply and everything in-between.
+ */
 public class Engine {
     private final ArrayList<String> welcomeMessages = new ArrayList<String>();
     private final ArrayList<String> quit = new ArrayList<String>();
@@ -16,9 +20,18 @@ public class Engine {
     private ArrayList<ArrayList<String>> memories = new ArrayList<ArrayList<String>>();
     private boolean programAlive = true;
 
+    /**
+     * The run method is what is called to in RunEngine to scan through a script and store all the
+     * various Keywords, welcome and closing messages, and pre/post-substitutions. It takes a String
+     * variable which stores the script file name.
+     */
     public void run(String file) throws FileNotFoundException {
         try {
             Scanner scan = new Scanner(new FileReader(file));
+            /**
+             * The method creates a scanner and passes it to each of the methods below which will
+             * populate the private ArrayLists with the appropriate script values.
+             */
             scan.nextLine();
             startingMessages(scan);
             goodbyeMessages(scan);
@@ -32,6 +45,10 @@ public class Engine {
         }
     }
 
+    /**
+     * This method scans through the scanner and looks for every instance of "start: ". When that is found,
+     * everything after start is added to the welcoming messages.
+     */
     private void startingMessages(Scanner scan) {
         String line = scan.nextLine();
         while (line.startsWith("start: ")) {
@@ -40,6 +57,11 @@ public class Engine {
             line = scan.nextLine();
         }
     }
+
+    /**
+     * This method scans through the scanner and looks for every instance of "end: ". When that is found,
+     * everything after end is added to the closing messages.
+     */
     private void goodbyeMessages(Scanner scan) {
         String line = scan.nextLine();
         while (line.startsWith("end: ")) {
@@ -48,14 +70,27 @@ public class Engine {
             line = scan.nextLine();
         }
     }
+
+    /**
+     * This method scans through the scanner and looks for every instance of "quit: ". When that is found,
+     * everything after quit is added to the quit messages.
+     */
     private void quitMessages(Scanner scan) {
         String line = scan.nextLine();
-        while (line.contains("quit")) {
+        while (line.contains("quit: ")) {
             int index = line.indexOf(":");
             this.quit.add(line.substring(index + 2));
             line = scan.nextLine();
         }
     }
+
+    /**
+     * This method scans through the scanner and looks for every instance of "pre: ". When that is found,
+     * it splits the line into individual words using a regex split. Then, if the amount of words is greater
+     * than three, the program will create a new substitution with the first words as before and the other
+     * words as after. If the amount of words is only two, a new substitution is created with a before
+     * and after.
+     */
     private void preSubstitutionRules(Scanner scan) {
         String line = scan.nextLine();
         while (line.contains("pre")) {
@@ -69,6 +104,11 @@ public class Engine {
         }
     }
 
+    /**
+     * This method scans through the scanner and looks for every instance of "post: ". When that is found,
+     * it splits the line into individual words using a regex split. A new substitution is created with a
+     * before and after.
+     */
     public void postSubstitutionRules(Scanner scan) {
         String line = scan.nextLine();
         while (line.contains("post")) {
