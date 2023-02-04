@@ -107,10 +107,6 @@ reassembly: Do you want me to (r)?
 keyword: i 1
 decomposition: NONE
 reassembly: referto NONE
-decomposition: i feel <
-reassembly: Why do you feel (r)?
-reassembly: How often do you feel (r)?
-reassembly: What is making you feel this way?
 decomposition: i think <
 reassembly: Why do you think (r)?
 reassembly: Can you elaborate more?
@@ -141,6 +137,7 @@ reassembly: What is making you question if you are (r)?
 -
 keyword: feel 2
 decomposition: i feel <
+reassembly: Why do you feel (r)?
 reassembly: Is there a main cause behind these feelings?
 reassembly: Is this something that you feel on a regular basis?
 reassembly: Does feeling (r) affect how you go about your life?
@@ -170,13 +167,6 @@ reassembly: referto feel
 decomposition: she feels emotion 
 reassembly: referto feel
 decomposition: they feel emotion
--
-decomposition: he feels emotion 
-reassembly: referto feel
-decomposition: she feels emotion 
-reassembly: referto feel
-decomposition: they feel emotion 
-reassembly: referto feel
 -
 keyword: no 3
 decomposition: NONE
@@ -238,16 +228,5 @@ reassembly: What is the cause for you cheating (r)?
 reassembly: How do you feel knowing that you cheated (r)?
 decomposition: family cheated <
 reassembly: Why do you think that they cheated (r)?
--
-keyword: kind 4
-decomposition: NONE
-reassembly: How does kindness affect you?
-reassembly: Do you think it is good to be kind?
-reassembly: Do you think people appreciate kindness enough?
--
-keyword: mean 4
-decomposition: NONE 
-reassembly: Why do you think people feel the need to be mean?
-reassembly: Do you think being mean can severely affect people?
 -
 FINAL

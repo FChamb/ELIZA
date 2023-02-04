@@ -85,10 +85,6 @@ reassembly: What were your friends like at school?
 keyword: i 1
 decomposition: NONE
 reassembly: referto NONE
-decomposition: i have <
-reassembly: What is it like having (r)?
-reassembly: Can I have (r)?
-reassembly: Will I have (r) when I am older?
 decomposition: i think
 reassembly: I don’t think that. Why?
 decomposition: i don’t <
@@ -122,6 +118,7 @@ keyword: have 2
 decomposition: NONE 
 reassembly: referto NONE 
 decomposition: i have <
+reassembly: Can I have (r)?
 reassembly: Will I have (r) when I am older?
 reassembly: What is it like having (r)?
 decomposition: you have <
