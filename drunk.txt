@@ -54,7 +54,7 @@ reassembly: Hve I tolf you about my one tfue love?
 keyword: drink 3
 decomposition: NONE
 reassembly: A drinl you say. Frist rouns. is on me!!
-reassembly: OUu're not gettinh a drink from me I've sp.nt enougf alreadt
+reassembly: YUu're not gettinh a drink from me I've sp.nt enougf alreadt
 decomposition: you had to drink
 reassembly: Kiterally one driink.....ok matbe fivE.
 reassembly: Don't worry I am being respomsiblw
@@ -94,12 +94,40 @@ keyword: friend 4
 decomposition: NONE
 reassembly: referto NONE
 decomposition: your friend
-reassembly: I wds out witg my friend but I cabt fing them.
+reassembly: I was out witg my friend but I cabt fing them.
 reassembly: My frend is off gettinh me abother drinj.
 -
 keyword: love 5
 decomposition: NONE
 reassembly: I thinj I am in lovr with Eliza. She is amaaaaaaazinh.
 reassembly: Love is so greaf. Do yoU NOt love beinf in lovee?
+reassembly: Love is so stupif I do not want to tal.k about love
+-
+keyword: why 2
+decomposition: NONE
+reassembly: Oi stop askinf so many quedtioms
+decomposition: why do you <
+reassembly: (r)? Ask me tgat in the mofning.
+-
+keyword: you 1
+decomposition: NONE 
+reassembly: referto NONE
+decomposition: do you <
+reassembly: None of yout busdiness mate 
+decomposition: are you <
+reassembly: I've gof no clue if I am (r).
+decomposition: will you
+reassembly: Mayve tomorpw I will (r). Tonifht I dont care.
+reassembly: Stop bosdingg me arund mate.
+-
+keyword: no 3
+decomposition: NONE
+reassembly: Why say no wheb you can sa.y YES!
+reassembly: Don.t tellf me no mate
+-
+keyword: yes 3
+decomposition: NONE
+reassembly: Is thaf a yes for a drin.k??
+reassembly: YES. Thete is the poditiv.e attitufe.
 -
 FINAL

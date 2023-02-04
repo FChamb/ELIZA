@@ -92,11 +92,11 @@ reassembly: Why?
 reassembly: I don’t (r) either.
 -
 keyword: am 3
-decomposition: i am
+decomposition: i am <
 reassembly: Why are you (r)?
-reassembly: What is it like being (r) ?
-decomposition: am i
-reassembly: I’m only 8, I don’t know if you are (r)?
+reassembly: What is it like being (r)?
+decomposition: am i <
+reassembly: I’m only 8, I don’t know.
 -
 keyword: family 4
 decomposition: NONE
@@ -104,15 +104,15 @@ reassembly: I love being with my (r). What is your (r) like?
 reassembly: My (r) says to always be nice. Do you agree? 
 -
 keyword: you 1
-decomposition: NONE 
+decomposition: NONE
 reassembly: referto NONE
-decomposition: do you 
+decomposition: do you
 reassembly: Maybe you should ask my mum?
-decomposition: are you 
-reassembly: I don’t know if I am (r). Should I be?
-decomposition: will you
+decomposition: are you
+reassembly: I don’t know. Should I be?
+decomposition: will you <
 reassembly: Do you think I should (r)?
-reassembly: My parents say I have to.
+reassembly: My parents say I have to (r).
 -
 keyword: have 2
 decomposition: NONE 
@@ -143,16 +143,16 @@ keyword: play 4
 decomposition: NONE
 reassembly: I like to play with my toys all the time. 
 reassembly: My friends and I always play at school during break time. 
-decomposition: play with <
-reassembly: I play (r) a lot. 
+decomposition: you play with <
+reassembly: I play (r) a lot.
 reassembly: Sometimes I like playing (r) but then I get bored.
 decomposition: i play <
 reassembly: Can I play (r) too?
 reassembly: Playing (r) sounds fun!
 -
 keyword: teacher 4
-decomposition: NONE 
-reassembly: referto NONE 
+decomposition: NONE
+reassembly: referto NONE
 decomposition: my teacher
 reassembly: What was your teacher like?
 reassembly: Did your teacher show you how to divide and multiply?
