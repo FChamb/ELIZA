@@ -74,7 +74,6 @@ decomposition: NONE
 reassembly: Tell me more about your (r).
 reassembly: How is your relationship with your (r)?
 decomposition: family is emotion
-decomposition: family is emotion <
 reassembly: How do you feel that your (r)?
 -
 keyword: want 2
@@ -108,7 +107,7 @@ keyword: i 1
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i think <
-reassembly: Why do you think (r)?
+reassembly: Why do you (r)?
 reassembly: Can you elaborate more?
 decomposition: i don’t <
 reassembly: Why don’t you (r)?
@@ -192,6 +191,17 @@ keyword: hate 4
 decomposition: i hate <
 reassembly: It is common to hate (r).
 reassembly: Why do you think you hate (r)?
+-
+keyword: hates 4 <
+decomposition: family hates <
+reassembly: It is common to hate (r).
+reassembly: Why do you think they hate (r)?
+decomposition: he hates <
+reassembly: Why do you think he hates (r)?
+reassembly: It is common to hate (r).
+decomposition: she hates <
+reassembly: Why do you think she hates (r)?
+reassembly: It is common to hate (r).
 -
 keyword: remember 5
 decomposition: i remember <
