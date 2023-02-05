@@ -345,12 +345,12 @@ public class Engine {
     public ArrayList<String> checkDecomposition(String line, Keyword keyword) {
         int random = (int) (Math.random() * 10);
         for (Decomposition decomp : keyword.getDecomposition()) {
+            if (keyword.getWord().equals("NONE") && !memories.isEmpty() && random <= 5) {
+                ArrayList<String> memory = memories.get(randomElement(memories));
+                memories.remove(memory);
+                return memory;
+            }
             if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
-                if (keyword.getWord().equals("NONE") && !memories.isEmpty() && random <= 5) {
-                    ArrayList<String> memory = memories.get(randomElement(memories));
-                    memories.remove(memory);
-                    return memory;
-                }
                 return decomp.getReassembly();
             }
         }
