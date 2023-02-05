@@ -32,6 +32,8 @@ pre: dad family
 pre: brother family
 pre: sister family
 pre: wife family
+pre: son family
+pre: daughter family
 pre: husband family
 pre: grandma family
 pre: grandpa family
