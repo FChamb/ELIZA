@@ -230,6 +230,8 @@ reassembly: Why do you love (r)?
 reassembly: Is there a reason you love (r)?
 decomposition: doesn't love <
 reassembly: Why do you think that is?
+decomposition: no love <
+reassembly: Why do you think you have no love?
 -
 keyword: mean 4
 decomposition: NONE
