@@ -117,6 +117,15 @@ reassembly: Why do you love (r)?
 reassembly: Is this love or obsession?
 reassembly: How does this love of (r) affect you?
 -
+keyword: wish 5
+decomposition: i wish <
+reassembly: Why do you wish (r)?
+reassembly: It is common to wish (r).
+reassembly: Do you think wishing (r) would make you happy?
+decomposition: they wish <
+reassembly: Why do you think they wish (r)?
+reassembly: It is common to wish (r).
+-
 keyword: have 2
 decomposition: NONE
 reassembly: referto NONE
