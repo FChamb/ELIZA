@@ -256,21 +256,43 @@ public class Engine {
         String response = "";
         String[] oldWords = line.split(" ");
         /**
-         * First an array of the old words is created
+         * First an array of the old words is created from the user input. Then a new string variable is created
+         * that gets the output from the method correctPreSubs. This method checks every word in a line and replaces
+         * every pre-substitution from the script.
          */
         String preSubLine = correctPreSubs(line);
         String[] newWords = preSubLine.split(" ");
+        /**
+         * After the substitution has been made, every word in the new line is evaluated to see if it is a Keyword.
+         * If it is, it is added to an arraylist for future evaluation.
+         */
         for (String word : newWords) {
             ArrayList<Keyword> key = isWordKeyword(word);
             if (key.size() != 0) {
                 possibleKeyword.addAll(key);
             }
         }
+        /**
+         * Once all the keywords have been found from the user input, the one with the highest priority is found.
+         * Next the checkDecomposition method is called which finds what decomposition rule is used in the user input.
+         * The return value of that method is an arraylist of responses. After the reassembly rules are found the
+         * method finds if any of the responses have reference to a different keyword. This is part of the
+         * synonym implementation which enables specific words to relate to others. Finally, a random response is
+         * chosen from the list of available ones.
+         */
         Keyword highest = getHighestPriority(possibleKeyword);
         responses = checkDecomposition(preSubLine, highest);
         checkReferenceTo(preSubLine, responses);
         response = responses.get(randomElement(responses));
         responseWords = response.split(" ");
+        /**
+         * Lastly this method scrolls through every word of the response and checks for "(r)". This is a reference
+         * in the response that the program needs to take part of the user input for the response. The conditional
+         * statement checks if the decomposition rule has a "<" at the end, which symbolises that the method takes
+         * everything after the keyword.
+         * After having created a response the program will make sure the keyword is not an emotion. If it is not,
+         * then a memory will be created for future conversation.
+         */
         for (String word : responseWords) {
             if (word.contains("(r)")) {
                 if (highest.getDecomposition().toString().contains("<")) {
@@ -297,6 +319,11 @@ public class Engine {
         return response;
     }
 
+    /**
+     * This method acts a helper method to generateResponse. It takes a string variable which contains one word,
+     * and cycles through all the keywords. If the word matches it adds it to an arraylist and returns the list
+     * after checking all possibilities.
+     */
     public ArrayList<Keyword> isWordKeyword(String word) {
         ArrayList<Keyword> possibleKeywords = new ArrayList<Keyword>();
         for (Keyword key : keywords) {
@@ -307,6 +334,14 @@ public class Engine {
         return possibleKeywords;
     }
 
+    /**
+     * This method takes in the user input and the highest keyword in that line. It cycles through every
+     * decomposition in the highest keyword and checks to see if the user input has the corresponding decomposition
+     * in it. If the input does match one of the decompositions, it checks to see if the keyword is equal to "NONE".
+     * What this means is that no keyword fits in the output and a default response is chosen. If a default response
+     * is chosen then there is a 50% chance that a memory will be chosen, assuming that the program has created
+     * at least one memory. If nothing matches, a default message is chosen.
+     */
     public ArrayList<String> checkDecomposition(String line, Keyword keyword) {
         int random = (int) (Math.random() * 10);
         for (Decomposition decomp : keyword.getDecomposition()) {
@@ -322,6 +357,13 @@ public class Engine {
         return keyword.getDecomposition().get(0).getReassembly();
     }
 
+    /**
+     * This method acts as a sort of synonym checker. Certain keywords/decompositions have very similar
+     * responses, and because of that each script has special tokens to refer to other keywords. This method
+     * takes the user input and a list of the found responses. It looks at every response and sees if any of
+     * them contain the referto token. If the line contain a referto, then the new keyword is set to the reference
+     * and checkDecomposition gets the appropriate responses.
+     */
     public void checkReferenceTo(String line, ArrayList<String> responses) {
         for (int i = 0; i < responses.size(); i++) {
             String resp = responses.get(i);
@@ -337,6 +379,11 @@ public class Engine {
         }
     }
 
+    /**
+     * This method takes a list of possible keywords and checks which one has the highest priority.
+     * It does this by using a for loop to find every keyword's word and priority. If the priority of the
+     * next word is higher than the previous, than the highest is set to the new word.
+     */
     public Keyword getHighestPriority(ArrayList<Keyword> keywords) {
         int highest = 0;
         Keyword highestKey = null;
@@ -349,6 +396,11 @@ public class Engine {
         return highestKey;
     }
 
+    /**
+     * This method takes the user input line and splits it into its individual words. If any of the
+     * words are equal to any of the pre-substitution rules, then the word is replaced with the proper
+     * word. Finally, the line is rebuilt and returned.
+     */
     public String correctPreSubs(String line) {
         String[] words = line.split(" ");
         String finalLine = "";
@@ -368,6 +420,11 @@ public class Engine {
         return finalLine;
     }
 
+    /**
+     * This method takes the generateResponse line and splits it into its individual words. If any of the
+     * words are equal to any of the post-substitution rules, then the word is replaced with the proper
+     * word. Finally, the line is rebuilt and returned.
+     */
     public String correctPostSubs(String line) {
         String[] words = line.split(" ");
         String finalLine = "";
@@ -386,6 +443,14 @@ public class Engine {
         return finalLine;
     }
 
+    /**
+     * This method is essential to allowing the Engine take the proper section of the user input.
+     * It takes arrays with both the old and new words as well as the highest keyword. The old words
+     * are the user's original input. The new words are the words after pre-substitutions have been made.
+     * Because pre-substitution words may have different lengths this program compares each word from the
+     * original input with its counterpart. If they are different length, then difference adds the length
+     * difference. At the end the difference is returned.
+     */
     public int correctIndexError(String[] oldWords, String[] newWords, Keyword highest) {
         int difference = 0;
         for (int i = 0; i < newWords.length; i++) {
@@ -402,6 +467,11 @@ public class Engine {
         return difference;
     }
 
+    /**
+     * This method creates a memory using the highest keyword and a previously asked question. Two generic
+     * responses are created which pursues the user about a previously mentioned topic. As long as the highest
+     * keyword does not equal "NONE", then the memory is added for future use.
+     */
     public void createMemory(Keyword keyword, String takenFromLine) {
         ArrayList<String> memoryResponses = new ArrayList<String>();
         takenFromLine = takenFromLine.substring(0, takenFromLine.length() - 1).toLowerCase();
@@ -412,10 +482,18 @@ public class Engine {
         }
     }
 
-    public boolean getProgramALive() {
+    /**
+     * getProgramAlive is a simple getter method that returns the private boolean value which is by default
+     * set to true. If the user enters a quit word, then programAlive is set to false.
+     */
+    public boolean getProgramAlive() {
         return this.programAlive;
     }
 
+    /**
+     * randomElement takes an arraylist input and returns a random int value contained in the list.
+     * This is used for picking random welcome/closing messages and responses.
+     */
     public int randomElement(ArrayList list) {
         return (int) (Math.random() * list.size());
     }
