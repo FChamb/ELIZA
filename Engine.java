@@ -346,9 +346,10 @@ public class Engine {
                 return memory;
             } else if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
                 return decomp.getReassembly();
-            } else if (decomp.getDecomposition().equals("NONE")) {
-                return keyword.getDecomposition().get(0).getReassembly();
             }
+        }
+        if (keyword.getDecomposition().toString().contains("NONE")) {
+            return keyword.getDecomposition().get(0).getReassembly();
         }
         return keywords.get(0).getDecomposition().get(0).getReassembly();
     }
