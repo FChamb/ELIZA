@@ -81,6 +81,8 @@ reassembly: I love school because my teacher is so nice.
 decomposition: my school
 reassembly: What was your school like?
 reassembly: What were your friends like at school?
+decomposition: like school
+reassembly: referto like
 -
 keyword: i 1
 decomposition: NONE
@@ -101,7 +103,7 @@ reassembly: I’m only 8, I don’t know.
 keyword: family 4
 decomposition: NONE
 reassembly: I love being with my (r). What is your (r) like?
-reassembly: My (r) says to always be nice. Do you agree? 
+reassembly: My (r) says to always be nice. Do you agree?
 -
 keyword: you 1
 decomposition: NONE
@@ -164,7 +166,7 @@ keyword: toy 5
 decomposition: NONE
 reassembly: Oh I love toys! My favorite one is a little car that moves on a track.
 reassembly: Do you have any toys?
-decomposition: favorite toy <
+decomposition: favorite toy
 reassembly: My favorite toy is a little car that goes on a track.
 reassembly: What is your favorite toy?
 -
@@ -173,15 +175,19 @@ decomposition: NONE
 reassembly: No no no.
 reassembly: Why no?
 reassembly: I don't agree with you.
+decomposition: no i asked you
+reassembly: No I asked you.
 -
 keyword: yes 3
 decomposition: NONE
 reassembly: I don't agree with you.
 reassembly: Hmm
 -
-keyword: name 5
+keyword: name 4
 decomposition: what is your name
 reassembly: My name is Freddie.
+decomposition: my name is <
+reassembly: (r) a weird name?
 -
 keyword: like 2
 decomposition: you like <
@@ -190,5 +196,13 @@ reassembly: Sometimes I like (r) but sometimes I dont.
 decomposition: i like <
 reassembly: Why do you like (r)?
 reassembly: Will I like (r) when I am older?
+-
+keyword: fun 4
+decomposition: NONE <
+reassembly: I thought you were too old for fun.
+reassembly: Do you even like having fun?
+decomposition: do for fun <
+reassembly: I play with my friends.
+reassembly: What do you do for fun?
 -
 FINAL
