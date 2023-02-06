@@ -26,6 +26,13 @@ pre: dont don’t
 pre: you’re you are
 pre: i’m i am
 pre: were was
+pre: there's there is
+pre: i'll i will
+pre: he'll he will
+pre: she'll she will
+pre: they'll they will
+pre: she's she is
+pre: he's he is
 pre: mum family
 pre: mom family
 pre: dad family
@@ -265,5 +272,25 @@ reassembly: What is the cause for you cheating (r)?
 reassembly: How do you feel knowing that you cheated (r)?
 decomposition: family cheated <
 reassembly: Why do you think that they cheated (r)?
+-
+keyword: is 2
+decomposition: she is <
+reassembly: Why do you think she is (r)?
+decomposition: he is <
+reassembly: Why do you think he is (r)?
+-
+keyword: will 2
+decomposition: i will <
+reassembly: Do you feel the need to (r)?
+reassembly: Do you think it will help if you (r)?
+decomposition: she will <
+reassembly: Why do you think she feels the need to (r)?
+reassembly: Do you think you are doing something that will make her (r)?
+decomposition: he will <
+reassembly: Why do you think he feels the need to (r)?
+reassembly: Do you think you are doing something that will make him (r)?
+decomposition: they will <
+reassembly: Why do you think they feel the need to (r)?
+reassembly: Do you think you are doing something that will make them (r)?
 -
 FINAL
