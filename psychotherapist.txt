@@ -154,14 +154,24 @@ reassembly: Does feeling (r) affect how you go about your life?
 decomposition: they feel <
 reassembly: Could there be something you are doing that is making them feel (r)?
 reassembly: How does their feeling (r) make you feel?
-decomposition: he feels <
-reassembly: Is there a main cause behind these feelings?
-reassembly: Do you think this is something he feels on a regular basis?
-reassembly: Does feeling (r) affect how he goes about his life?
 decomposition: she feels <
 reassembly: Is there a main cause behind these feelings?
 reassembly: Do you think this is something she feels on a regular basis?
 reassembly: Does feeling (r) affect how she goes about her life?
+decomposition: he feels <
+reassembly: Is there a main cause behind these feelings?
+reassembly: Do you think this is something he feels on a regular basis?
+reassembly: Does feeling (r) affect how he goes about his life?
+-
+keyword: feeling 4
+decomposition: i am feeling <
+reassembly: Why are you feeling (r)?
+decomposition: they are feeling <
+reassembly: Why do you think they feel (r)?
+decomposition: she is feeling <
+reassembly: Why do you think she feels (r)?
+decomposition: he is feeling <
+reassembly: Why do you think he feels (r)?
 -
 keyword: emotion 3
 decomposition: NONE
