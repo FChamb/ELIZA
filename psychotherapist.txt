@@ -54,7 +54,6 @@ post: yourself myself
 post: i you
 post: you i
 post: my your
-post: i’m you are
 
 keyword: NONE 0
 decomposition: NONE
