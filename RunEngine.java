@@ -1,4 +1,6 @@
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.sql.SQLSyntaxErrorException;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -23,13 +25,14 @@ public class RunEngine {
     public static void main(String[] args) {
         try {
             Engine engine = new Engine();
-            engine.run(args[0]);
+            FileReader fileReader = new FileReader(args[0]);
+            engine.run(fileReader);
             RunEngine run = new RunEngine();
             run.beginEliza(engine);
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Please provide a script for the engine: " + e);
+            System.out.println("Please provide a script for the engine: " + e.getMessage());
         } catch (FileNotFoundException e) {
-            System.out.println("That script file can not be found: " + e);
+            System.out.println("That script file can not be found: " + e.getMessage());
         }
     }
 

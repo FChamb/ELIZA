@@ -23,24 +23,20 @@ public class Engine {
      * various Keywords, welcome and closing messages, and pre/post-substitutions. It takes a String
      * variable which stores the script file name.
      */
-    public void run(String file) throws FileNotFoundException {
-        try {
-            Scanner scan = new Scanner(new FileReader(file));
-            /**
-             * The method creates a scanner and passes it to each of the methods below which will
-             * populate the private ArrayLists with the appropriate script values.
-             */
-            scan.nextLine();
-            startingMessages(scan);
-            goodbyeMessages(scan);
-            quitMessages(scan);
-            preSubstitutionRules(scan);
-            postSubstitutionRules(scan);
-            generateKeywords(scan);
-            sortKeywords();
-        } catch (FileNotFoundException e) {
-            System.out.println("Script file not found: " + e);
-        }
+    public void run(FileReader fileReader) throws FileNotFoundException {
+        Scanner scan = new Scanner(fileReader);
+        /**
+         * The method creates a scanner and passes it to each of the methods below which will
+         * populate the private ArrayLists with the appropriate script values.
+         */
+        scan.nextLine();
+        startingMessages(scan);
+        goodbyeMessages(scan);
+        quitMessages(scan);
+        preSubstitutionRules(scan);
+        postSubstitutionRules(scan);
+        generateKeywords(scan);
+        sortKeywords();
     }
 
     /**
@@ -91,7 +87,7 @@ public class Engine {
      */
     private void preSubstitutionRules(Scanner scan) {
         String line = scan.nextLine();
-        while (line.contains("pre")) {
+        while (line.contains("pre:")) {
             String[] words = line.split(" ");
             if (words.length > 3) {
                 this.preSubs.add(new Substitution(words[1], words[2] + " " + words[3]));
@@ -109,7 +105,7 @@ public class Engine {
      */
     public void postSubstitutionRules(Scanner scan) {
         String line = scan.nextLine();
-        while (line.contains("post")) {
+        while (line.contains("post:")) {
             String[] words = line.split(" ");
             this.postSubs.add(new Substitution(words[1], words[2]));
             line = scan.nextLine();
@@ -125,7 +121,6 @@ public class Engine {
         /**
          * Instance variables of keyword and priority are created so the method can
          * access them throughout.
-         *
          * Decomposition and reassembly arraylists are created so that the method can access
          * them when creating a keyword.
          */
