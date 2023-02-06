@@ -134,7 +134,4 @@ decomposition: NONE
 reassembly: Is thaf a yes for a drin.k??
 reassembly: YES. Thete is the poditiv.e attitufe.
 -
-keyword: money 2
-decomposition: how much money
-
 FINAL

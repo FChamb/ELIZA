@@ -23,6 +23,7 @@ pre: arent aren’t
 pre: dont don’t
 pre: you’re you are
 pre: i’m i am
+pre: what's what is
 pre: were was
 pre: mum family
 pre: dad family
