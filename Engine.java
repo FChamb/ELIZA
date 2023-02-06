@@ -349,12 +349,13 @@ public class Engine {
                 ArrayList<String> memory = memories.get(randomElement(memories));
                 memories.remove(memory);
                 return memory;
-            }
-            if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
+            } else if (line.contains(decomp.getDecomposition().replaceAll("<", ""))) {
                 return decomp.getReassembly();
+            } else if (decomp.getDecomposition().equals("NONE")) {
+                return keyword.getDecomposition().get(0).getReassembly();
             }
         }
-        return keyword.getDecomposition().get(0).getReassembly();
+        return keywords.get(0).getDecomposition().get(0).getReassembly();
     }
 
     /**
