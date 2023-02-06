@@ -43,6 +43,10 @@ pre: tired emotion
 pre: hungry emotion
 pre: angry emotion
 pre: hurt emotion
+pre: upset emotion
+pre: depressed emotion
+pre: scared emotion
+pre: exhausted emotion
 pre: me i
 
 post: am are

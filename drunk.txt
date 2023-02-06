@@ -33,6 +33,10 @@ pre: sad emotion
 pre: tired emotion
 pre: hungry emotion
 pre: angry emotion
+pre: upset emotion
+pre: depressed emotion
+pre: scared emotion
+pre: exhausted emotion
 pre: friends friend
 
 post: am are
@@ -130,4 +134,7 @@ decomposition: NONE
 reassembly: Is thaf a yes for a drin.k??
 reassembly: YES. Thete is the poditiv.e attitufe.
 -
+keyword: money 2
+decomposition: how much money
+
 FINAL
