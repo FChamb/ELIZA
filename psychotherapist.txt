@@ -115,6 +115,8 @@ reassembly: Why do you think you cant (r)?
 decomposition: why don't you <
 reassembly: Why do you think I don't (r)?
 reassembly: Do you want me to (r)?
+decomposition: why <
+reassembly: Why what?
 -
 keyword: i 1
 decomposition: NONE
@@ -123,7 +125,7 @@ decomposition: i think <
 reassembly: Why do you (r)?
 reassembly: Can you elaborate more?
 decomposition: i don’t <
-reassembly: Why don’t you (r)?
+reassembly: Why do you say (r)?
 reassembly: Do you want to be able to (r)?
 decomposition: i love <
 reassembly: Why do you love (r)?
@@ -188,6 +190,8 @@ keyword: emotion 3
 decomposition: NONE
 reassembly: referto NONE
 decomposition: i am emotion
+reassembly: referto am
+decomposition: i am so emotion
 reassembly: referto am
 decomposition: am i emotion
 reassembly: referto am
