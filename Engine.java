@@ -22,6 +22,8 @@ public class Engine {
      * The run method is what is called to in RunEngine to scan through a script and store all the
      * various Keywords, welcome and closing messages, and pre/post-substitutions. It takes a String
      * variable which stores the script file name.
+     * @param fileReader - a file reader that contains the given script file
+     * @throws FileNotFoundException - an exception which is caught in case a script does not exist
      */
     public void run(FileReader fileReader) throws FileNotFoundException {
         Scanner scan = new Scanner(fileReader);
@@ -40,8 +42,9 @@ public class Engine {
     }
 
     /**
-     * This method scans through the scanner and looks for every instance of "start: ". When that is found,
+     *  This method scans through the scanner and looks for every instance of "start: ". When that is found,
      * everything after start is added to the welcoming messages.
+     * @param scan - a scanner which reads through a file reader with the script inside
      */
     private void startingMessages(Scanner scan) {
         String line = scan.nextLine();
@@ -55,6 +58,7 @@ public class Engine {
     /**
      * This method scans through the scanner and looks for every instance of "end: ". When that is found,
      * everything after end is added to the closing messages.
+     * @param scan - a scanner which reads through a file reader with the script inside
      */
     private void goodbyeMessages(Scanner scan) {
         String line = scan.nextLine();
@@ -68,6 +72,7 @@ public class Engine {
     /**
      * This method scans through the scanner and looks for every instance of "quit: ". When that is found,
      * everything after quit is added to the quit messages.
+     * @param scan - a scanner which reads through a file reader with the script inside
      */
     private void quitMessages(Scanner scan) {
         String line = scan.nextLine();
@@ -84,6 +89,7 @@ public class Engine {
      * than three, the program will create a new substitution with the first words as before and the other
      * words as after. If the amount of words is only two, a new substitution is created with a before
      * and after.
+     * @param scan - a scanner which reads through a file reader with the script inside
      */
     private void preSubstitutionRules(Scanner scan) {
         String line = scan.nextLine();
@@ -102,6 +108,7 @@ public class Engine {
      * This method scans through the scanner and looks for every instance of "post: ". When that is found,
      * it splits the line into individual words using a regex split. A new substitution is created with a
      * before and after.
+     * @param scan - a scanner which reads through a file reader with the script inside
      */
     public void postSubstitutionRules(Scanner scan) {
         String line = scan.nextLine();
@@ -116,6 +123,7 @@ public class Engine {
      * This method is the final method in reading the script. It scans every line and looks for each instance
      * of, first "reassembly: ", then "decomposition: ", and finally "keyword: ". If one of those are matched,
      * it begins the cycle of creating a keyword with different decomposition and reassembly rules.
+     * @param scan - a scanner which reads through a file reader with the script inside
      */
     private void generateKeywords(Scanner scan) {
         /**
@@ -224,6 +232,8 @@ public class Engine {
      * see if any of the words in the response contain one of the quit messages. If the line
      * does, then the private variable programAlive is set to false and a boolean false is
      * returned to RunEngine.
+     * @param line - the user inputted line
+     * @return - returns a boolean value, false if the line contains a quit message, true otherwise
      */
     public boolean checkQuitMessages(String line) {
         String[] words = line.split(" ");
@@ -243,6 +253,8 @@ public class Engine {
      * by looking at what the user says. It finds the highest keyword, gets the correct decomposition and chooses
      * a random reassembly to respond. If the reassembly calls back to the user input then the method will cut the
      * correct portion of the user input and paste it into the response.
+     * @param line - the user inputted line
+     * @return - returns a String with the response to a user's input
      */
     public String generateResponse(String line) {
         ArrayList<Keyword> possibleKeyword = new ArrayList<Keyword>();
@@ -318,6 +330,8 @@ public class Engine {
      * This method acts a helper method to generateResponse. It takes a string variable which contains one word,
      * and cycles through all the keywords. If the word matches it adds it to an arraylist and returns the list
      * after checking all possibilities.
+     * @param word - an individual word in the user's inputted line
+     * @return - returns an arraylist of Keywords that match the given word
      */
     public ArrayList<Keyword> isWordKeyword(String word) {
         ArrayList<Keyword> possibleKeywords = new ArrayList<Keyword>();
@@ -336,6 +350,9 @@ public class Engine {
      * What this means is that no keyword fits in the output and a default response is chosen. If a default response
      * is chosen then there is a 50% chance that a memory will be chosen, assuming that the program has created
      * at least one memory. If nothing matches, a default message is chosen.
+     * @param line - the user inputted line
+     * @param keyword - the highest matched keyword in the user's input
+     * @return - returns an arraylist of reassembly rules
      */
     public ArrayList<String> checkDecomposition(String line, Keyword keyword) {
         int random = (int) (Math.random() * 10);
@@ -360,6 +377,8 @@ public class Engine {
      * takes the user input and a list of the found responses. It looks at every response and sees if any of
      * them contain the referto token. If the line contain a referto, then the new keyword is set to the reference
      * and checkDecomposition gets the appropriate responses.
+     * @param line - the user's inputted line
+     * @param responses - the arraylist of found reassembly rules
      */
     public void checkReferenceTo(String line, ArrayList<String> responses) {
         for (int i = 0; i < responses.size(); i++) {
@@ -380,6 +399,8 @@ public class Engine {
      * This method takes a list of possible keywords and checks which one has the highest priority.
      * It does this by using a for loop to find every keyword's word and priority. If the priority of the
      * next word is higher than the previous, than the highest is set to the new word.
+     * @param keywords - an arraylist of the possible keywords in a user's input
+     * @return - returns the keyword with the highest priority
      */
     public Keyword getHighestPriority(ArrayList<Keyword> keywords) {
         int highest = 0;
@@ -397,6 +418,8 @@ public class Engine {
      * This method takes the user input line and splits it into its individual words. If any of the
      * words are equal to any of the pre-substitution rules, then the word is replaced with the proper
      * word. Finally, the line is rebuilt and returned.
+     * @param line - the user's inputted line
+     * @return - returns the new line after pre-substitutions
      */
     public String correctPreSubs(String line) {
         String[] words = line.split(" ");
@@ -421,6 +444,8 @@ public class Engine {
      * This method takes the generateResponse line and splits it into its individual words. If any of the
      * words are equal to any of the post-substitution rules, then the word is replaced with the proper
      * word. Finally, the line is rebuilt and returned.
+     * @param line - the user's inputted line
+     * @return - returns the new line after post-substitutions
      */
     public String correctPostSubs(String line) {
         String[] words = line.split(" ");
@@ -447,6 +472,10 @@ public class Engine {
      * Because pre-substitution words may have different lengths this program compares each word from the
      * original input with its counterpart. If they are different length, then difference adds the length
      * difference. At the end the difference is returned.
+     * @param oldWords - an array of the original input words
+     * @param newWords - an array of the pre-substitution input words
+     * @param highest - the keyword with the highest priority found from the user input
+     * @return - returns an integer with the total number of character differences between the old and new words
      */
     public int correctIndexError(String[] oldWords, String[] newWords, Keyword highest) {
         int difference = 0;
@@ -468,6 +497,8 @@ public class Engine {
      * This method creates a memory using the highest keyword and a previously asked question. Two generic
      * responses are created which pursues the user about a previously mentioned topic. As long as the highest
      * keyword does not equal "NONE", then the memory is added for future use.
+     * @param keyword - the keyword with the highest priority found from the user input
+     * @param takenFromLine - the reassembly rule and response created in generateResponse
      */
     public void createMemory(Keyword keyword, String takenFromLine) {
         ArrayList<String> memoryResponses = new ArrayList<String>();
@@ -482,6 +513,7 @@ public class Engine {
     /**
      * getProgramAlive is a simple getter method that returns the private boolean value which is by default
      * set to true. If the user enters a quit word, then programAlive is set to false.
+     * @return - returns a boolean private attribute to decide if the program is alive or not
      */
     public boolean getProgramAlive() {
         return this.programAlive;
@@ -490,6 +522,8 @@ public class Engine {
     /**
      * randomElement takes an arraylist input and returns a random int value contained in the list.
      * This is used for picking random welcome/closing messages and responses.
+     * @param list - a given list usually corresponding to one of the private data structures
+     * @return - returns a random integer index in the list
      */
     public int randomElement(ArrayList list) {
         return (int) (Math.random() * list.size());

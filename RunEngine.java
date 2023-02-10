@@ -21,6 +21,7 @@ public class RunEngine {
      * using the provided script and runs a scan through the script. Then it creates a new RunEngine
      * instance and begins Eliza. There are several catches to make sure the user inputs an appropriate
      * script file and that the file exists.
+     * @param args - the arguments given by the user, should contain the name of the script
      */
     public static void main(String[] args) {
         try {
@@ -41,6 +42,7 @@ public class RunEngine {
      * by providing a welcome message and then entering into the while loop. Each cycle it checks to
      * see if the user inputted a quit message, and then removes all punctuation so that the Engine can
      * generate a response. After quit has been called, a closing message is given and the program ends.
+     * @param engine - an Engine object which contains the current script and instance of the project
      */
     public void beginEliza(Engine engine) {
         Scanner scan = new Scanner(System.in);
